@@ -162,7 +162,7 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 				enemy3.life = 0;
 			}
 		}
-		if (enemy1.life > 0)
+		if (enemy4.life > 0)
 		{
 			if (PlayerEnemy4Hit(player, enemy4))
 			{
