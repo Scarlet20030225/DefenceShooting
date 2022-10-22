@@ -128,6 +128,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             }
             shot.PlayerBurst(player, playerShot);
             shot.BossBurst(boss, bossShot);
+            shot.CheckHit(player, enemy1, enemy2, enemy3, enemy4);
             // ƒ}ƒbƒv
             map.Scroll();
 

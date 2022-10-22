@@ -65,3 +65,110 @@ void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 		bossShot->shotCounter = 0;
 	}
 }
+
+bool Shot::PlayerEnemy1Hit(Player& player, Enemy1& enemy1)
+{
+	dx = player.circle.x - enemy1.circle.x;
+	dy = player.circle.y - enemy1.circle.y;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy1.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy2Hit(Player& player, Enemy2& enemy2)
+{
+	dx = player.circle.x - enemy2.circle.x;
+	dy = player.circle.y - enemy2.circle.y;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy2.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy3Hit(Player& player, Enemy3& enemy3)
+{
+	dx = player.circle.x - enemy3.circle.x;
+	dy = player.circle.y - enemy3.circle.y;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy3.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy4Hit(Player& player, Enemy4& enemy4)
+{
+	dx = player.circle.x - enemy4.circle.x;
+	dy = player.circle.y - enemy4.circle.y;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy4.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
+{
+	if (player.life > 0)
+	{
+		if (enemy1.life > 0)
+		{
+			if (PlayerEnemy1Hit(player, enemy1))
+			{
+				player.life -= 1;
+				enemy1.life = 0;
+			}
+		}
+		if (enemy2.life > 0)
+		{
+			if (PlayerEnemy2Hit(player, enemy2))
+			{
+				player.life -= 1;
+				enemy2.life = 0;
+			}
+		}
+		if (enemy3.life > 0)
+		{
+			if (PlayerEnemy3Hit(player, enemy3))
+			{
+				player.life -= 1;
+				enemy3.life = 0;
+			}
+		}
+		if (enemy1.life > 0)
+		{
+			if (PlayerEnemy4Hit(player, enemy4))
+			{
+				player.life -= 1;
+				enemy4.life = 0;
+			}
+		}
+	}
+}
