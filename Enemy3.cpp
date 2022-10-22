@@ -5,6 +5,7 @@
 void Enemy3::Load()
 {
 	graph = LoadGraph("img/Enemy3.png");
+	damageGraph = LoadGraph("img/Enemy3Damaged.png");
 }
 
 void Enemy3::Init()
@@ -96,7 +97,14 @@ void Enemy3::Draw()
 	angle += 0.04f;
 	if (life > 0)
 	{
-		DrawRotaGraph2(x, y, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
-		//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
+		if (damageFlag == true)
+		{
+			DrawRotaGraph2(x, y, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, damageGraph, true, false);
+		}
+		else
+		{
+			DrawRotaGraph2(x, y, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
+			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
+		}
 	}
 }
