@@ -19,8 +19,12 @@ public:
 private:
 	struct Title
 	{
-		int graph;
-		int x, y;
+		int backGraph;
+		int backX, backY;
+		int TextGraph;
+		int TextX, TextY;
+		int pressEnterGraph;
+		int pressEnterX, pressEnterY;
 	};
 	Title title;
 };
