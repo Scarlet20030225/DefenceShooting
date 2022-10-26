@@ -48,21 +48,21 @@ void Shot::PlayerBurst(Player& player, PlayerShot* playerShot)
 
 void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 {
-	bossShot->shotCounter++;
-	if (bossShot->shotCounter == 60)
+	if (boss.life > 0)
 	{
-		for (int i = 0; i < SHOT_NUM; i++)
+		bossShot->shotCounter++;
+		if (bossShot->shotCounter >= 60)
 		{
-			if (bossShot->visibleFlag = false)
+			for (int i = 0; i < SHOT_NUM; i++)
 			{
-				bossShot->x = boss.x;
-				bossShot->y = boss.h + bossShot->h / static_cast<float>(2);
+				bossShot->x = boss.x + bossShot->w;
+				bossShot->y = (boss.h + bossShot->h) / static_cast<float>(2);
 
 				bossShot->visibleFlag = true;
-				break;
 			}
+			bossShot->shotCounter = 0;
 		}
-		bossShot->shotCounter = 0;
+		//printfDx("shotCounter = %d", bossShot->shotCounter);
 	}
 }
 

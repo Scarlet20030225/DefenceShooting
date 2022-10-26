@@ -4,7 +4,7 @@
 void BossShot::Load()
 {
 	// ‰æ‘œƒf[ƒ^“Ç‚İ‚İ
-	graph = LoadGraph("BossShot.png");
+	graph = LoadGraph("img/BossShot.png");
 }
 
 void BossShot::Init()
