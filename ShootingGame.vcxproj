@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Back.cpp" />
     <ClCompile Include="BaseEndurance.cpp" />
+    <ClCompile Include="BehavioralPattern.cpp" />
     <ClCompile Include="Boss.cpp" />
     <ClCompile Include="BossShot.cpp" />
     <ClCompile Include="Enemy1.cpp" />
@@ -152,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Back.h" />
+    <ClInclude Include="BehavioralPattern.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="Boss.h" />
     <ClInclude Include="Effect.h" />
