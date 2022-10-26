@@ -16,7 +16,7 @@ constexpr auto COLOR_DEPTH = 32;
 /// <summary>
 /// 基地の耐久値
 /// </summary>
-constexpr auto ENDURANCE_VALUE = 5;
+constexpr auto ENDURANCE_VALUE = 6;
 
 /// <summary>
 /// プレイヤー速度 
