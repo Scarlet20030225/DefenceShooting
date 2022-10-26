@@ -4,6 +4,7 @@
 void UI::Load()
 {
     graphBlackOut  = LoadGraph("img/BlackOut.png");
+    lostLifeGraph  = LoadGraph("img/LostLife.png");
 }
 
 void UI::Init()
@@ -12,6 +13,10 @@ void UI::Init()
     mode2X   =  864.0f;
     mode3X   = 1057.0f;
     modeAllY =  981.0f;
+    lostLife1X = 132.0f;
+    lostLife2X = 188.0f;
+    lostLife3X = 244.0f;
+    lostLifeAllY = 980.0f;
 }
 
 void UI::Draw()

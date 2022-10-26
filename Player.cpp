@@ -138,6 +138,21 @@ void Player::Draw(UI& ui)
 		DrawGraph(ui.mode1X, ui.modeAllY, ui.graphBlackOut, TRUE);
 		DrawGraph(ui.mode2X, ui.modeAllY, ui.graphBlackOut, TRUE);
 	}
+	if (life == 2)
+	{
+		DrawGraph(ui.lostLife3X, ui.lostLifeAllY, ui.lostLifeGraph, TRUE);
+	}
+	if (life == 1)
+	{
+		DrawGraph(ui.lostLife3X, ui.lostLifeAllY, ui.lostLifeGraph, TRUE);
+		DrawGraph(ui.lostLife2X, ui.lostLifeAllY, ui.lostLifeGraph, TRUE);
+	}
+	if (life == 0)
+	{
+		DrawGraph(ui.lostLife3X, ui.lostLifeAllY, ui.lostLifeGraph, TRUE);
+		DrawGraph(ui.lostLife2X, ui.lostLifeAllY, ui.lostLifeGraph, TRUE);
+		DrawGraph(ui.lostLife1X, ui.lostLifeAllY, ui.lostLifeGraph, TRUE);
+	}
 	if (life > 0)
 	{
 		DrawGraph(x, y, graph, TRUE);

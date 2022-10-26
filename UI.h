@@ -21,4 +21,9 @@ public:
 	float mode2X;
 	float mode3X;
 	float modeAllY;
+	int lostLifeGraph;
+	float lostLife1X;
+	float lostLife2X;
+	float lostLife3X;
+	float lostLifeAllY;
 };
