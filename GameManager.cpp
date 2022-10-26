@@ -7,7 +7,7 @@ Time time;
 UI ui;
 Map map;
 
-void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back)
+void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back)
 {
     ChangeWindowMode(TRUE);
     DxLib_Init();
@@ -16,10 +16,7 @@ void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, En
 
     // âÊëúì«Ç›çûÇ›ä÷êî
     player.Load();
-    enemy1.Load();
-    enemy2.Load();
-    enemy3.Load();
-    enemy4.Load();
+    behavioralPattern.Load(enemy1, enemy2, enemy3, enemy4);
     boss.Load();
     for (int i = 0; i < SHOT_NUM; i++)
     {
@@ -31,7 +28,7 @@ void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, En
     map.Load();
 }
 
-void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back)
+void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back)
 {
     while (ProcessMessage() == 0)
     {
@@ -43,10 +40,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
         case INIT:
             // èâä˙âªä÷êî
             player.Init();
-            enemy1.Init();
-            enemy2.Init();
-            enemy3.Init();
-            enemy4.Init();
+            behavioralPattern.Init(enemy1, enemy2, enemy3, enemy4);
             boss.Init();
             for (int i = 0; i < SHOT_NUM; i++)
             {
