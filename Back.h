@@ -25,6 +25,9 @@ private:
 	{
 		int backGraph;
 		int backX, backY;
+		int textGraph;
+		int textX, textY;
+		int textW, textH;
 		int star1Graph;
 		int star11X;
 		int star12X;
@@ -38,6 +41,8 @@ private:
 		int pressEnterX, pressEnterY;
 		int scrollSpeed1;
 		int scrollSpeed2;
+		int alphaCount1;
+		int alphaCount2;
 	};
 	Title title;
 };

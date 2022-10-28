@@ -5,6 +5,7 @@
 void Back::LoadTitle()
 {
     title.backGraph       = LoadGraph("img/Title.png");
+    title.textGraph       = LoadGraph("img/TitleText.png");
     title.star1Graph      = LoadGraph("img/TitleStar1.png");
     title.star2Graph      = LoadGraph("img/TitleStar2.png");
     title.pressEnterGraph = LoadGraph("img/PressEnterKey.png");
@@ -12,11 +13,15 @@ void Back::LoadTitle()
 
 void Back::InitTitle()
 {
+    GetGraphSize(title.textGraph, &title.textW, &title.textH);
     GetGraphSize(title.star1Graph, &title.star1W, &title.star1H);
     GetGraphSize(title.star2Graph, &title.star2W, &title.star2H);
 
     title.backX = 0;
     title.backY = 0;
+
+    title.textX = 260;
+    title.textY = 400;
 
     title.pressEnterX = 690;
     title.pressEnterY = 600;
@@ -31,6 +36,9 @@ void Back::InitTitle()
     // スクロールスピード初期化
     title.scrollSpeed1 = SCROLL_SPEED1;
     title.scrollSpeed2 = SCROLL_SPEED2;
+
+    title.alphaCount1 = 0;
+    title.alphaCount2 = 0;
 }
 
 void Back::Scroll()
@@ -68,5 +76,19 @@ void Back::DrawTitle()
         title.star22X = WINDOW_WIDTH;
     }
 
+    SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+    if (title.alphaCount1 <= 127)
+    {
+        title.alphaCount1++;
+    }
+    SetDrawBlendMode(DX_BLENDMODE_ALPHA, title.alphaCount1 * 2);
+    DrawGraph(title.textX, title.textY, title.textGraph, TRUE);
+
+    if (title.alphaCount2 <= 255)
+    {
+        title.alphaCount2++;
+    }
+    SetDrawBlendMode(DX_BLENDMODE_ALPHA, title.alphaCount2);
     DrawGraph(title.pressEnterX, title.pressEnterY, title.pressEnterGraph, TRUE);
+    SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 }
