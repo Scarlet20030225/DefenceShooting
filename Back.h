@@ -12,6 +12,10 @@ public:
 	/// </summary>
 	void InitTitle();
 	/// <summary>
+	/// 背景スクロール
+	/// </summary>
+	void Scroll();
+	/// <summary>
 	/// タイトル描画
 	/// </summary>
 	void DrawTitle();
@@ -21,8 +25,19 @@ private:
 	{
 		int backGraph;
 		int backX, backY;
+		int star1Graph;
+		int star11X;
+		int star12X;
+		int star1W, star1H;
+		int star2Graph;
+		int star21X;
+		int star22X;
+		int star2W, star2H;
+		int starY;
 		int pressEnterGraph;
 		int pressEnterX, pressEnterY;
+		int scrollSpeed1;
+		int scrollSpeed2;
 	};
 	Title title;
 };
