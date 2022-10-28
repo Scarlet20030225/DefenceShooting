@@ -21,8 +21,6 @@ private:
 	{
 		int backGraph;
 		int backX, backY;
-		int TextGraph;
-		int TextX, TextY;
 		int pressEnterGraph;
 		int pressEnterX, pressEnterY;
 	};
