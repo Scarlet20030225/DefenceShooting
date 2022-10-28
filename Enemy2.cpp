@@ -33,10 +33,6 @@ void Enemy2::Move()
 
 void Enemy2::Hit()
 {
-	if (x < 50)
-	{
-		life = 0;
-	}
 }
 
 void Enemy2::Damaged()

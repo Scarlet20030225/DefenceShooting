@@ -1,6 +1,6 @@
 #pragma once
-#include"PlayerShot.h"
 #include"BossShot.h"
+#include"BaseEndurance.h"
 
 class Shot
 {

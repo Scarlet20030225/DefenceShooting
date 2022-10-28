@@ -42,10 +42,6 @@ void Enemy4::Hit()
 	{
 		y > 930 - (h / static_cast<float>(2));
 	}
-	if (x < 50)
-	{
-		life = 0;
-	}
 }
 
 void Enemy4::Damaged()

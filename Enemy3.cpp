@@ -71,10 +71,6 @@ void Enemy3::Hit()
 	{
 		directionY = 1;
 	}
-	if (x < 50)
-	{
-		life = 0;
-	}
 }
 
 void Enemy3::Damaged()
