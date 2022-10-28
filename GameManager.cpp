@@ -7,7 +7,7 @@ Time time;
 UI ui;
 Map map;
 
-void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back)
+void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back, BaseEdurance& baseEdurance)
 {
     ChangeWindowMode(TRUE);
     DxLib_Init();
@@ -26,9 +26,10 @@ void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, En
     back.LoadTitle();
     ui.Load();
     map.Load();
+    baseEdurance.Load();
 }
 
-void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back)
+void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern, Boss& boss, PlayerShot* playerShot, BossShot* bossShot, Shot& shot, Back& back, BaseEdurance& baseEdurance)
 {
     while (ProcessMessage() == 0)
     {
@@ -51,6 +52,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             time.Init();
             map.Init();
             ui.Init();
+            baseEdurance.Init();
             
             // ƒ^ƒCƒgƒ‹‰æ–Ê‚Ö”ò‚Ô
             gameStatus = TITLE;
@@ -64,6 +66,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             ClearDrawScreen();
 
             back.DrawTitle();
+            back.Scroll();
             // ENTERƒL[‚ª‰Ÿ‚³‚ê‚½‚ç                  
             if (CheckHitKey(KEY_INPUT_RETURN))
             {
@@ -94,22 +97,8 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             player.Move(1.0f / 120.0f); 
             player.Mode();
             player.HitWall();
-            // G‹›“G1
-            enemy1.Move();
-            enemy1.Hit();
-            enemy1.Damaged();
-            // G‹›“G2
-            enemy2.Move();
-            enemy2.Hit();
-            enemy2.Damaged();
-            // G‹›“G3
-            enemy3.Move();
-            enemy3.Hit();
-            enemy3.Damaged();
-            // G‹›“G4
-            enemy4.Move();
-            enemy4.Hit();
-            enemy4.Damaged();
+            // G‹›“G
+            behavioralPattern.Update(enemy1, enemy2, enemy3, enemy4);
             // ƒ{ƒX
             boss.Move();
             boss.Hit();
@@ -123,16 +112,15 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             shot.PlayerBurst(player, playerShot);
             shot.BossBurst(boss, bossShot);
             shot.CheckHit(player, enemy1, enemy2, enemy3, enemy4);
-            // ƒ}ƒbƒv
+            // ƒ}ƒbƒvŠÖ˜A
             map.Scroll();
+            // ‚»‚Ì‘¼
+            baseEdurance.Edurance(enemy1, enemy2, enemy3, enemy4);
 
             // •`‰æŠÖ”
             map.Draw();
             boss.Draw();
-            enemy1.Draw();
-            enemy2.Draw();
-            enemy3.Draw();
-            enemy4.Draw();
+            behavioralPattern.Draw(enemy1, enemy2, enemy3, enemy4);
             for (int i = 0; i < SHOT_NUM; i++)
             {
                 playerShot[i].Draw();
@@ -140,6 +128,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             }
             player.Draw(ui);
             ui.Draw();
+            baseEdurance.Draw();
 
             // •`‰æ‚ÌŠm’è
             ScreenFlip();
