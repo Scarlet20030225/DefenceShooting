@@ -2,7 +2,7 @@
 #include"DxLib.h"
 #include"Player.h"
 #include"Back.h"
-#include"BehavioralPattern.h"
+#include"Shot.h"
 
 /// <summary>
 /// ƒQ[ƒ€‰Šú‰»

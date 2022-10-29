@@ -1,4 +1,5 @@
-#include "BehavioralPattern.h"
+#include"DxLib.h"
+#include"BehavioralPattern.h"
 
 void BehavioralPattern::Load(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
 {
@@ -14,9 +15,10 @@ void BehavioralPattern::Init(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy2.Init();
     enemy3.Init();
     enemy4.Init();
+    defetedEnemyNum = 0;
 }
 
-void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
+void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
 {
     // G‹›“G1
     enemy1.Move();
@@ -34,6 +36,7 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
     enemy4.Move();
     enemy4.Hit();
     enemy4.Damaged();
+    defetedEnemyNum = defetedEnemyNum + boss.burstEnemyNum;
 }
 
 void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
@@ -42,4 +45,8 @@ void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy2.Draw();
     enemy3.Draw();
     enemy4.Draw();
+    int color;
+    color = GetColor(255, 255, 255);
+
+    DrawFormatString(0, 0, color, "Œ‚”j”F%d", defetedEnemyNum);
 }

@@ -164,7 +164,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 				if (graph == missileBullet)
 				{
 					visibleFlag = false;
-					boss.life  -= 15;
+					boss.life  -= 10;
 				}
 			}
 
@@ -193,7 +193,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					if (graph == missileBullet)
 					{
 						visibleFlag = false;
-						enemy1.life -= 15;
+						enemy1.life = 0;
 					}
 				}
 			}
@@ -222,7 +222,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					if (graph == missileBullet)
 					{
 						visibleFlag = false;
-						enemy2.life -= 15;
+						enemy2.life = 0;
 					}
 				}
 			}
@@ -251,7 +251,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					if (graph == missileBullet)
 					{
 						visibleFlag = false;
-						enemy3.life -= 15;
+						enemy3.life = 0;
 					}
 				}
 			}
@@ -297,7 +297,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					if (graph == missileBullet)
 					{
 						visibleFlag = false;
-						enemy4.life -= 15;
+						enemy4.life = 0;
 					}
 				}
 			}

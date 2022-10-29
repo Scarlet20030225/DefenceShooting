@@ -5,7 +5,6 @@
 #include"Enemy2.h"
 #include"Enemy3.h"
 #include"Enemy4.h"
-#include"BaseEndurance.h"
 
 class PlayerShot
 {

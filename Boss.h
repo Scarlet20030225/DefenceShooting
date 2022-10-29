@@ -42,6 +42,7 @@ public:
 	int  life;
 	int  damageCounter;
 	int  damageGraph;
+	int  burstEnemyNum;
 	bool damageFlag;
 
 	int directionY;

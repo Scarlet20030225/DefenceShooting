@@ -27,6 +27,7 @@ void Boss::Init()
 	// ‚»‚Ì‘¼(ƒtƒ‰ƒO“™)‚Ì‰Šú‰»
 	damageFlag = false;
 	directionY = 0;
+	burstEnemyNum = 0;
 }
 
 void Boss::Move()

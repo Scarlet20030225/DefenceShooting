@@ -18,27 +18,31 @@ void BaseEdurance::Init()
 	enduranceValue = ENDURANCE_VALUE;
 }
 
-void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
+void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern)
 {
 	if (enemy1.x < 50 && enemy1.life > 0)
 	{
 		enemy1.life = 0;
 		enduranceValue -= 1;
+		behavioralPattern.defetedEnemyNum += 1;
 	}
 	if (enemy2.x < 50 && enemy2.life > 0)
 	{
 		enduranceValue -= 1;
 		enemy2.life = 0;
+		behavioralPattern.defetedEnemyNum += 1;
 	}
 	if (enemy3.x < 50 && enemy3.life > 0)
 	{
 		enemy3.life = 0;
 		enduranceValue -= 1;
+		behavioralPattern.defetedEnemyNum += 1;
 	}
 	if (enemy4.x < 50 && enemy4.life > 0)
 	{
 		enemy4.life = 0;
 		enduranceValue -= 1;
+		behavioralPattern.defetedEnemyNum += 1;
 	}
 }
 

@@ -98,7 +98,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             player.Mode();
             player.HitWall();
             // 雑魚敵
-            behavioralPattern.Update(enemy1, enemy2, enemy3, enemy4);
+            behavioralPattern.Update(enemy1, enemy2, enemy3, enemy4, boss);
             // ボス
             boss.Move();
             boss.Hit();
@@ -111,11 +111,11 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             }
             shot.PlayerBurst(player, playerShot);
             shot.BossBurst(boss, bossShot);
-            shot.CheckHit(player, enemy1, enemy2, enemy3, enemy4);
+            shot.CheckHit(player, enemy1, enemy2, enemy3, enemy4, behavioralPattern);
             // マップ関連
             map.Scroll();
             // その他
-            baseEdurance.Edurance(enemy1, enemy2, enemy3, enemy4);
+            baseEdurance.Edurance(enemy1, enemy2, enemy3, enemy4, behavioralPattern);
 
             // 描画関数
             map.Draw();

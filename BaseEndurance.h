@@ -1,5 +1,5 @@
 #pragma once
-#include"PlayerShot.h"
+#include"BehavioralPattern.h"
 
 class BaseEdurance
 {
@@ -9,7 +9,7 @@ public:
 	/// </summary>
 	void Load();
 	void Init();
-	void Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4);
+	void Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern);
 	void Draw();
 
 
