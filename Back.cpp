@@ -13,18 +13,21 @@ void Back::LoadTitle()
 
 void Back::InitTitle()
 {
+    GetGraphSize(title.backGraph, &title.backW, &title.backH);
     GetGraphSize(title.textGraph, &title.textW, &title.textH);
     GetGraphSize(title.star1Graph, &title.star1W, &title.star1H);
     GetGraphSize(title.star2Graph, &title.star2W, &title.star2H);
 
-    title.backX = 0;
+    title.back1X = 0;
+    title.back2X = WINDOW_WIDTH;
+
     title.backY = 0;
 
-    title.textX = 260;
+    title.textX = 210;
     title.textY = 400;
 
     title.pressEnterX = 690;
-    title.pressEnterY = 600;
+    title.pressEnterY = 700;
 
     title.starY = 0;
 
@@ -36,6 +39,7 @@ void Back::InitTitle()
     // スクロールスピード初期化
     title.scrollSpeed1 = SCROLL_SPEED1;
     title.scrollSpeed2 = SCROLL_SPEED2;
+    title.scrollSpeed3 = SCROLL_SPEED3;
 
     title.alphaCount1 = 0;
     title.alphaCount2 = 0;
@@ -48,11 +52,23 @@ void Back::Scroll()
 
     title.star21X -= title.scrollSpeed2;
     title.star22X -= title.scrollSpeed2;
+
+    title.back1X  -= title.scrollSpeed3;
+    title.back2X  -= title.scrollSpeed3;
 }
 
 void Back::DrawTitle()
 {
-    DrawGraph(title.backX, title.backX, title.backGraph, TRUE);
+    DrawGraph(title.back1X, title.backY, title.backGraph, TRUE);
+    DrawGraph(title.back2X, title.backY, title.backGraph, TRUE);
+    if (title.back1X + title.backW == 0)
+    {
+        title.back1X = WINDOW_WIDTH;
+    }
+    if (title.back2X + title.backW == 0)
+    {
+        title.back2X = WINDOW_WIDTH;
+    }
 
     DrawGraph(title.star11X, title.starY, title.star1Graph, TRUE);
     DrawGraph(title.star12X, title.starY, title.star1Graph, TRUE);

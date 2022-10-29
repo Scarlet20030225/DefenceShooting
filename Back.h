@@ -24,7 +24,10 @@ private:
 	struct Title
 	{
 		int backGraph;
-		int backX, backY;
+		int back1X;
+		int back2X;
+		int backW, backH;
+		int backY;
 		int textGraph;
 		int textX, textY;
 		int textW, textH;
@@ -41,6 +44,7 @@ private:
 		int pressEnterX, pressEnterY;
 		int scrollSpeed1;
 		int scrollSpeed2;
+		int scrollSpeed3;
 		int alphaCount1;
 		int alphaCount2;
 	};
