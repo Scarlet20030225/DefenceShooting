@@ -12,8 +12,8 @@ void BossShot::Init()
 	// 画像サイズ所得
 	GetGraphSize(graph, &w, &h);
 
+	shotCounter = 60;
 	visibleFlag = false;
-	shotCounter = 0;
 }
 
 void BossShot::Update(Player& player)
@@ -21,10 +21,10 @@ void BossShot::Update(Player& player)
 	if (visibleFlag == true)
 	{
 		// 弾iを移動させる
-		x -= 2;
+		x -= 10;
 
 		// 画面外に出てしまった場合は弾の存在を消す
-		if (x < 0)
+		if (x < 50)
 		{
 			visibleFlag = false;
 		}

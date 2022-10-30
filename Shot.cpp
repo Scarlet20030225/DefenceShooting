@@ -50,8 +50,8 @@ void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 {
 	if (boss.life > 0)
 	{
-		bossShot->shotCounter++;
-		if (bossShot->shotCounter >= 60)
+		bossShot->shotCounter--;
+		if (bossShot->shotCounter == 0)
 		{
 			for (int i = 0; i < SHOT_NUM; i++)
 			{
@@ -59,8 +59,9 @@ void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 				bossShot->y = (boss.h + bossShot->h) / static_cast<float>(2) + boss.y;;
 
 				bossShot->visibleFlag = true;
+				break;
 			}
-			bossShot->shotCounter = 0;
+			bossShot->shotCounter = 60;
 		}
 		//printfDx("shotCounter = %d", bossShot->shotCounter);
 	}
