@@ -47,14 +47,14 @@ void Back::InitTitle()
 
 void Back::Scroll()
 {
-    title.star11X -= title.scrollSpeed1;
-    title.star12X -= title.scrollSpeed1;
+    title.back1X -= title.scrollSpeed1;
+    title.back2X -= title.scrollSpeed1;
+    
+    title.star11X -= title.scrollSpeed2;
+    title.star12X -= title.scrollSpeed2;
 
-    title.star21X -= title.scrollSpeed2;
-    title.star22X -= title.scrollSpeed2;
-
-    title.back1X  -= title.scrollSpeed3;
-    title.back2X  -= title.scrollSpeed3;
+    title.star21X -= title.scrollSpeed3;
+    title.star22X -= title.scrollSpeed3;
 }
 
 void Back::DrawTitle()
