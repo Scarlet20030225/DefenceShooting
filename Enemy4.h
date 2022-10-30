@@ -27,5 +27,6 @@ public:
 	int  damageGraph;
 	int  directionY;
 	int  avoidance;
+	int defetedEnemy4Num;
 	bool damageFlag;
 };

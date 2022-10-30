@@ -144,7 +144,6 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			{
 				player.life -= 1;
 				enemy1.life = 0;
-				behavioralPattern.defetedEnemyNum += 1;
 			}
 		}
 		if (enemy2.life > 0)
@@ -153,7 +152,6 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			{
 				player.life -= 1;
 				enemy2.life = 0;
-				behavioralPattern.defetedEnemyNum += 1;
 			}
 		}
 		if (enemy3.life > 0)
@@ -162,7 +160,6 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			{
 				player.life -= 1;
 				enemy3.life = 0;
-				behavioralPattern.defetedEnemyNum += 1;
 			}
 		}
 		if (enemy4.life > 0)
@@ -171,7 +168,6 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			{
 				player.life -= 1;
 				enemy4.life = 0;
-				behavioralPattern.defetedEnemyNum += 1;
 			}
 		}
 	}

@@ -23,6 +23,7 @@ void Enemy4::Init()
 	circle.r = w / static_cast<float>(2) - 3;
 	// ‚»‚Ì‘¼(ƒtƒ‰ƒO“™)‚Ì‰Šú‰»
 	damageFlag = false;
+	defetedEnemy4Num = 0;
 }
 
 void Enemy4::Move()
@@ -73,5 +74,9 @@ void Enemy4::Draw()
 			DrawRotaGraph2(x, y, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
 			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
 		}
+	}
+	else
+	{
+		DeleteGraph(graph, damageGraph);
 	}
 }

@@ -36,7 +36,7 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
     enemy4.Move();
     enemy4.Hit();
     enemy4.Damaged();
-    defetedEnemyNum = defetedEnemyNum + boss.burstEnemyNum;
+    defetedEnemyNum = enemy1.defetedEnemy1Num + enemy2.defetedEnemy2Num + enemy3.defetedEnemy3Num + enemy4.defetedEnemy4Num;
 }
 
 void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
@@ -45,8 +45,8 @@ void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy2.Draw();
     enemy3.Draw();
     enemy4.Draw();
+
     int color;
     color = GetColor(255, 255, 255);
-
     DrawFormatString(0, 0, color, "Œ‚”j”F%d", defetedEnemyNum);
 }

@@ -87,4 +87,8 @@ void Boss::Draw()
 			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
 		}
 	}
+	else
+	{
+		DeleteGraph(graph, damageGraph);
+	}
 }
