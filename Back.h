@@ -40,8 +40,6 @@ private:
 		int star22X;
 		int star2W, star2H;
 		int starY;
-		int pressEnterGraph;
-		int pressEnterX, pressEnterY;
 		int scrollSpeed1;
 		int scrollSpeed2;
 		int scrollSpeed3;

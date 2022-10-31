@@ -8,7 +8,6 @@ void Back::LoadTitle()
     title.textGraph       = LoadGraph("img/TitleText.png");
     title.star1Graph      = LoadGraph("img/TitleStar1.png");
     title.star2Graph      = LoadGraph("img/TitleStar2.png");
-    title.pressEnterGraph = LoadGraph("img/PressEnterKey.png");
 }
 
 void Back::InitTitle()
@@ -24,10 +23,7 @@ void Back::InitTitle()
     title.backY = 0;
 
     title.textX = 210;
-    title.textY = 400;
-
-    title.pressEnterX = 690;
-    title.pressEnterY = 700;
+    title.textY = 300;
 
     title.starY = 0;
 
@@ -99,12 +95,5 @@ void Back::DrawTitle()
     }
     SetDrawBlendMode(DX_BLENDMODE_ALPHA, title.alphaCount1 * 2);
     DrawGraph(title.textX, title.textY, title.textGraph, TRUE);
-
-    if (title.alphaCount2 <= 255)
-    {
-        title.alphaCount2++;
-    }
-    SetDrawBlendMode(DX_BLENDMODE_ALPHA, title.alphaCount2);
-    DrawGraph(title.pressEnterX, title.pressEnterY, title.pressEnterGraph, TRUE);
     SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 }

@@ -48,5 +48,5 @@ void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
 
     int color;
     color = GetColor(255, 255, 255);
-    DrawFormatString(0, 0, color, "Œ‚”j”F%d", defetedEnemyNum);
+    //DrawFormatString(0, 0, color, "Œ‚”j”F%d", defetedEnemyNum);
 }
