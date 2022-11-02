@@ -16,8 +16,9 @@ void BehavioralPattern::Init(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy2.Init();
     enemy3.Init();
     enemy4.Init();
-    boss.Init();
     defetedEnemyNum = 0;
+
+    boss.Init();
 }
 
 void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
@@ -38,11 +39,13 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
     enemy4.Move();
     enemy4.Hit();
     enemy4.Damaged();
+    defetedEnemyNum = enemy1.defetedEnemy1Num + enemy2.defetedEnemy2Num + enemy3.defetedEnemy3Num + enemy4.defetedEnemy4Num;
+
     // ƒ{ƒX
     boss.Move();
     boss.Hit();
     boss.Damaged();
-    defetedEnemyNum = enemy1.defetedEnemy1Num + enemy2.defetedEnemy2Num + enemy3.defetedEnemy3Num + enemy4.defetedEnemy4Num;
+
 }
 
 void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
