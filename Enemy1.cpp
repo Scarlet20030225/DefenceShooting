@@ -64,9 +64,13 @@ void Enemy1::Damaged()
 	if (damageFlag == true)
 	{
 		damageCounter++;
-		if (damageCounter == 3)
+		if (damageCounter == 1)
 		{
 			damageFlag = false;
+		}
+		if (life <= 0)
+		{
+			defetedEnemy1Num += 1;
 		}
 	}
 }

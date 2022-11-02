@@ -42,9 +42,13 @@ void Enemy2::Damaged()
 	if (damageFlag == true)
 	{
 		damageCounter++;
-		if (damageCounter == 3)
+		if (damageCounter == 1)
 		{
 			damageFlag = false;
+		}
+		if (life <= 0)
+		{
+			defetedEnemy2Num += 1;
 		}
 	}
 }

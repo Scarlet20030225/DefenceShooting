@@ -80,9 +80,13 @@ void Enemy3::Damaged()
 	if (damageFlag == true)
 	{
 		damageCounter++;
-		if (damageCounter == 3)
+		if (damageCounter == 1)
 		{
 			damageFlag = false;
+		}
+		if (life <= 0)
+		{
+			defetedEnemy3Num += 1;
 		}
 	}
 }
