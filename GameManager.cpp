@@ -16,8 +16,7 @@ void GameInit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, En
 
     // ‰æ‘œ“Ç‚İ‚İŠÖ”
     player.Load();
-    behavioralPattern.Load(enemy1, enemy2, enemy3, enemy4);
-    boss.Load();
+    behavioralPattern.Load(enemy1, enemy2, enemy3, enemy4, boss);
     for (int i = 0; i < SHOT_NUM; i++)
     {
         playerShot[i].Load();
@@ -41,8 +40,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
         case INIT:
             // ‰Šú‰»ŠÖ”
             player.Init();
-            behavioralPattern.Init(enemy1, enemy2, enemy3, enemy4);
-            boss.Init();
+            behavioralPattern.Init(enemy1, enemy2, enemy3, enemy4, boss);
             for (int i = 0; i < SHOT_NUM; i++)
             {
                 playerShot[i].Init();
@@ -97,12 +95,8 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             player.Move(1.0f / 120.0f); 
             player.Mode();
             player.HitWall();
-            // G‹›“G
+            // “G
             behavioralPattern.Update(enemy1, enemy2, enemy3, enemy4, boss);
-            // ƒ{ƒX
-            boss.Move();
-            boss.Hit();
-            boss.Damaged();
             // ƒVƒ‡ƒbƒg
             for (int i = 0; i < SHOT_NUM; i++)
             {
@@ -119,8 +113,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
 
             // •`‰æŠÖ”
             map.Draw();
-            boss.Draw();
-            behavioralPattern.Draw(enemy1, enemy2, enemy3, enemy4);
+            behavioralPattern.Draw(enemy1, enemy2, enemy3, enemy4, boss);
             for (int i = 0; i < SHOT_NUM; i++)
             {
                 playerShot[i].Draw();

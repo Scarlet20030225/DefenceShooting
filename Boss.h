@@ -40,6 +40,7 @@ public:
 	int  speed;
 	int  graph;
 	int  life;
+	int  moveCounter;
 	int  damageCounter;
 	int  damageGraph;
 	int  burstEnemyNum;

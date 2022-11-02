@@ -14,9 +14,9 @@ void Boss::Init()
 	// 画像サイズ所得
 	GetGraphSize(graph, &w, &h);
 	// 座標初期化
-	x        = WINDOW_WIDTH - 650;
+	x        = WINDOW_WIDTH;
 	y        = WINDOW_HEIGHT / static_cast<float>(2) - (h / static_cast<float>(2));
-	circle.x = WINDOW_WIDTH - 400;
+	circle.x = WINDOW_WIDTH + 200;
 	circle.y = WINDOW_HEIGHT / static_cast<float>(2);
 	circle.r = h / static_cast<float>(2) - 3;
 	// 速度&体力の初期化
@@ -27,21 +27,36 @@ void Boss::Init()
 	// その他(フラグ等)の初期化
 	damageFlag = false;
 	directionY = 0;
+	moveCounter = 0;
 	burstEnemyNum = 0;
 }
 
 void Boss::Move()
 {
-	// 移動処理
-	if (directionY == 0)
+	x -= speed;
+	circle.x -= speed;
+	if (x <= 1200)
 	{
-		y        += speed;
-		circle.y += speed;
-	}
-	if (directionY == 1)
-	{
-		y        -= speed;
-		circle.y -= speed;
+		if (moveCounter >= 0 && moveCounter <= 30)
+		{
+			moveCounter++;
+		}
+		x = 1200;
+		circle.x = 1400;
+		if (moveCounter >= 30)
+		{
+			// 移動処理
+			if (directionY == 0)
+			{
+				y += speed;
+				circle.y += speed;
+			}
+			if (directionY == 1)
+			{
+				y -= speed;
+				circle.y -= speed;
+			}
+		}
 	}
 }
 
@@ -64,7 +79,7 @@ void Boss::Damaged()
 	if (damageFlag == true)
 	{
 		damageCounter++;
-		if (damageCounter == 3)
+		if (damageCounter == 1)
 		{
 			damageFlag = false;
 		}
@@ -76,7 +91,6 @@ void Boss::Draw()
 	// 描画処理
 	if (life > 0)
 	{
-		DrawBox(585, 100, 585 + (life * 5), 110, GetColor(255, 0, 0), true);
 		if (damageFlag == true)
 		{
 			DrawGraph(x, y, damageGraph, TRUE);
