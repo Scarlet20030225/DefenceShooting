@@ -55,13 +55,13 @@ void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 		{
 			for (int i = 0; i < SHOT_NUM; i++)
 			{
-				bossShot->x = boss.x + bossShot->w;
-				bossShot->y = (boss.h + bossShot->h) / static_cast<float>(2) + boss.y;
+				bossShot[i].x = boss.x + bossShot[i].w;
+				bossShot[i].y = (boss.h + bossShot[i].h) / static_cast<float>(2) + boss.y;
 
-				bossShot->visibleFlag = true;
+				bossShot[i].visibleFlag = true;
 				break;
 			}
-			bossShot->shotCounter = 60;
+			bossShot->shotCounter = 30;
 		}
 		//printfDx("shotCounter = %d", bossShot->shotCounter);
 	}
@@ -135,7 +135,7 @@ bool Shot::PlayerEnemy4Hit(Player& player, Enemy4& enemy4)
 	return false;
 }
 
-void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern)
+void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
 {
 	if (player.life > 0)
 	{

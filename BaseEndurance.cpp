@@ -18,7 +18,7 @@ void BaseEdurance::Init()
 	enduranceValue = ENDURANCE_VALUE;
 }
 
-void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern)
+void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4)
 {
 	if (enemy1.x < 50 && enemy1.life > 0)
 	{

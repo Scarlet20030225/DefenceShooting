@@ -101,15 +101,18 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             for (int i = 0; i < SHOT_NUM; i++)
             {
                 playerShot[i].Update(boss, enemy1, enemy2, enemy3, enemy4);
-                bossShot[i].Update(player);
+                if (boss.x == 1200)
+                {
+                    bossShot[i].Update(player);
+                }
             }
             shot.PlayerBurst(player, playerShot);
             shot.BossBurst(boss, bossShot);
-            shot.CheckHit(player, enemy1, enemy2, enemy3, enemy4, behavioralPattern);
+            shot.CheckHit(player, enemy1, enemy2, enemy3, enemy4);
             // マップ関連
             map.Scroll();
             // その他
-            baseEdurance.Edurance(enemy1, enemy2, enemy3, enemy4, behavioralPattern);
+            baseEdurance.Edurance(enemy1, enemy2, enemy3, enemy4);
 
             // 描画関数
             map.Draw();
@@ -117,7 +120,10 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             for (int i = 0; i < SHOT_NUM; i++)
             {
                 playerShot[i].Draw();
-                bossShot[i].Draw();
+                if (boss.x == 1200)
+                {
+                    bossShot[i].Draw();
+                }
             }
             player.Draw(ui);
             ui.Draw();

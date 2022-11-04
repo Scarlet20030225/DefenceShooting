@@ -9,7 +9,7 @@ public:
 	/// </summary>
 	void Load();
 	void Init();
-	void Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, BehavioralPattern& behavioralPattern);
+	void Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4);
 	void Draw();
 
 
