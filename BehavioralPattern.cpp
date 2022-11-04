@@ -50,12 +50,13 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
 
 void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
 {
-    boss.Draw();
     enemy1.Draw();
     enemy2.Draw();
     enemy3.Draw();
     enemy4.Draw();
-
+   
+    boss.Draw();
+   
     DrawBox(585, 100, 585 + (boss.life * 5), 110, GetColor(255, 0, 0), true);
     DrawBox(585, 100, 585 + (defetedEnemyNum * 15), 110, GetColor(255, 255, 0), true);
     int color;
