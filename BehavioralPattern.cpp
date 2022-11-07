@@ -56,9 +56,9 @@ void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy4.Draw();
    
     boss.Draw();
-   
-    DrawBox(585, 100, 585 + (boss.life * 5), 110, GetColor(255, 0, 0), true);
+
     DrawBox(585, 100, 585 + (defetedEnemyNum * 15), 110, GetColor(255, 255, 0), true);
+    DrawBox(585, 100, 585 + (boss.life * 5), 110, GetColor(255, 0, 0), true);
     int color;
     color = GetColor(255, 255, 255);
     DrawFormatString(0, 0, color, "åÇîjêîÅF%d", defetedEnemyNum);
