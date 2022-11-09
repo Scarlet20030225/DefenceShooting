@@ -19,6 +19,7 @@ void BehavioralPattern::Init(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy1.Init4();
     enemy1.Init5();
     enemy2.Init();
+    enemy2.Init1();
     enemy3.Init();
     enemy4.Init();
     defetedEnemyNum = 0;
@@ -29,7 +30,11 @@ void BehavioralPattern::Init(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
 void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
 {
     defetedEnemyNum = enemy1.defetedEnemy1Num + enemy2.defetedEnemy2Num + enemy3.defetedEnemy3Num + enemy4.defetedEnemy4Num;
-    // ŽG‹›“G1
+    if (defetedEnemyNum >= 0)
+    {
+        enemy2.Move();
+        enemy2.Move1();
+    }
     if (defetedEnemyNum >= 2)
     {
         enemy1.Move();
@@ -48,18 +53,15 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
         enemy1.Move4();
         enemy1.Move5();
     }
+    enemy3.Move();
+    enemy4.Move();
+
     enemy1.Hit();
     enemy1.Damaged();
-    // ŽG‹›“G2
-    enemy2.Move();
     enemy2.Hit();
     enemy2.Damaged();
-    // ŽG‹›“G3
-    enemy3.Move();
     enemy3.Hit();
     enemy3.Damaged();
-    // ŽG‹›“G4
-    enemy4.Move();
     enemy4.Hit();
     enemy4.Damaged();
 
