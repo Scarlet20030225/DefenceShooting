@@ -11,6 +11,7 @@ public:
 	void Init3();
 	void Init4();
 	void Init5();
+	void Init6();
 
 	void Move();
 	void Move1();
@@ -18,6 +19,7 @@ public:
 	void Move3();
 	void Move4();
 	void Move5();
+	void Move6();
 
 	void Hit();
 	void Damaged();
@@ -31,6 +33,7 @@ public:
 		float x3, y3, r3;
 		float x4, y4, r4;
 		float x5, y5, r5;
+		float x6, y6, r6;
 	};
 	CIRCLE circle;
 
@@ -40,6 +43,7 @@ public:
 	float x3, y3;
 	float x4, y4;
 	float x5, y5;
+	float x6, y6;
 
 	int  w, h;
 	int  speed;
@@ -51,6 +55,7 @@ public:
 	int  life3;
 	int  life4;
 	int  life5;
+	int  life6;
 
 	int	 shotInterval;
 	int  shotInterval1;
@@ -58,6 +63,7 @@ public:
 	int  shotInterval3;
 	int  shotInterval4;
 	int  shotInterval5;
+	int  shotInterval6;
 
 	int  damageCounter;
 	int  damageCounter1;
@@ -65,6 +71,7 @@ public:
 	int  damageCounter3;
 	int  damageCounter4;
 	int  damageCounter5;
+	int  damageCounter6;
 
 	int  damageGraph;
 
@@ -74,6 +81,7 @@ public:
 	int  directionY3;
 	int  directionY4;
 	int  directionY5;
+	int  directionY6;
 
 	int  defetedEnemy1Num;
 
@@ -83,4 +91,5 @@ public:
 	bool damageFlag3;
 	bool damageFlag4;
 	bool damageFlag5;
+	bool damageFlag6;
 };

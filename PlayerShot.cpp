@@ -105,6 +105,58 @@ bool PlayerShot::CheckEnemy1Hit3(Enemy1& enemy1)
 	return false;
 }
 
+bool PlayerShot::CheckEnemy1Hit4(Enemy1& enemy1)
+{
+	dx = circle.x - enemy1.circle.x4;
+	dy = circle.y - enemy1.circle.y4;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy1.circle.r4;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool PlayerShot::CheckEnemy1Hit5(Enemy1& enemy1)
+{
+	dx = circle.x - enemy1.circle.x5;
+	dy = circle.y - enemy1.circle.y5;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy1.circle.r5;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G1‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è6
+bool PlayerShot::CheckEnemy1Hit6(Enemy1& enemy1)
+{
+	dx = circle.x - enemy1.circle.x6;
+	dy = circle.y - enemy1.circle.y6;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy1.circle.r6;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
 // ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è
 bool PlayerShot::CheckEnemy2Hit(Enemy2& enemy2)
 {
@@ -113,6 +165,132 @@ bool PlayerShot::CheckEnemy2Hit(Enemy2& enemy2)
 	dr = dx * dx + dy * dy;
 
 	ar = circle.r + enemy2.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è1
+bool PlayerShot::CheckEnemy2Hit1(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x1;
+	dy = circle.y - enemy2.circle.y1;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r1;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è2
+bool PlayerShot::CheckEnemy2Hit2(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x2;
+	dy = circle.y - enemy2.circle.y2;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r2;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è3
+bool PlayerShot::CheckEnemy2Hit3(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x3;
+	dy = circle.y - enemy2.circle.y3;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r3;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è4
+bool PlayerShot::CheckEnemy2Hit4(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x4;
+	dy = circle.y - enemy2.circle.y4;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r4;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è5
+bool PlayerShot::CheckEnemy2Hit5(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x5;
+	dy = circle.y - enemy2.circle.y5;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r5;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è6
+bool PlayerShot::CheckEnemy2Hit6(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x6;
+	dy = circle.y - enemy2.circle.y6;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r6;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+// ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è7
+bool PlayerShot::CheckEnemy2Hit7(Enemy2& enemy2)
+{
+	dx = circle.x - enemy2.circle.x7;
+	dy = circle.y - enemy2.circle.y7;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy2.circle.r7;
 	dl = ar * ar;
 
 	if (dr < dl)
@@ -140,6 +318,74 @@ bool PlayerShot::CheckEnemy3Hit(Enemy3& enemy3)
 
 	return false;
 }
+// ŽG‹›“G3‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è1
+bool PlayerShot::CheckEnemy3Hit1(Enemy3& enemy3)
+{
+	dx = circle.x - enemy3.circle.x1;
+	dy = circle.y - enemy3.circle.y1;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy3.circle.r1;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G3‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è2
+bool PlayerShot::CheckEnemy3Hit2(Enemy3& enemy3)
+{
+	dx = circle.x - enemy3.circle.x2;
+	dy = circle.y - enemy3.circle.y2;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy3.circle.r2;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G3‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è3
+bool PlayerShot::CheckEnemy3Hit3(Enemy3& enemy3)
+{
+	dx = circle.x - enemy3.circle.x3;
+	dy = circle.y - enemy3.circle.y3;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy3.circle.r3;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G3‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è4
+bool PlayerShot::CheckEnemy3Hit4(Enemy3& enemy3)
+{
+	dx = circle.x - enemy3.circle.x4;
+	dy = circle.y - enemy3.circle.y4;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy3.circle.r4;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
 
 // ŽG‹›“G4‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è
 bool PlayerShot::CheckEnemy4Hit(Enemy4& enemy4)
@@ -149,6 +395,74 @@ bool PlayerShot::CheckEnemy4Hit(Enemy4& enemy4)
 	dr = dx * dx + dy * dy;
 
 	ar = circle.r + enemy4.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G4‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è1
+bool PlayerShot::CheckEnemy4Hit1(Enemy4& enemy4)
+{
+	dx = circle.x - enemy4.circle.x1;
+	dy = circle.y - enemy4.circle.y1;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy4.circle.r1;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G4‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è2
+bool PlayerShot::CheckEnemy4Hit2(Enemy4& enemy4)
+{
+	dx = circle.x - enemy4.circle.x2;
+	dy = circle.y - enemy4.circle.y2;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy4.circle.r2;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G4‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è3
+bool PlayerShot::CheckEnemy4Hit3(Enemy4& enemy4)
+{
+	dx = circle.x - enemy4.circle.x3;
+	dy = circle.y - enemy4.circle.y3;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy4.circle.r3;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+// ŽG‹›“G4‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è4
+bool PlayerShot::CheckEnemy4Hit4(Enemy4& enemy4)
+{
+	dx = circle.x - enemy4.circle.x4;
+	dy = circle.y - enemy4.circle.y4;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy4.circle.r4;
 	dl = ar * ar;
 
 	if (dr < dl)
@@ -338,7 +652,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			if (enemy1.life4 > 0)
 			{
 				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
-				if (CheckEnemy1Hit(enemy1))
+				if (CheckEnemy1Hit4(enemy1))
 				{
 					enemy1.damageFlag4 = true;
 					enemy1.damageCounter4 = 0;
@@ -366,7 +680,7 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			if (enemy1.life5 > 0)
 			{
 				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
-				if (CheckEnemy1Hit(enemy1))
+				if (CheckEnemy1Hit5(enemy1))
 				{
 					enemy1.damageFlag5 = true;
 					enemy1.damageCounter5 = 0;
@@ -388,6 +702,34 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					{
 						visibleFlag = false;
 						enemy1.life5 = 0;
+					}
+				}
+			}
+			if (enemy1.life6 > 0)
+			{
+				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy1Hit6(enemy1))
+				{
+					enemy1.damageFlag6 = true;
+					enemy1.damageCounter6 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy1.life6 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy1.life6 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy1.life6 = 0;
 					}
 				}
 			}
@@ -420,6 +762,209 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					}
 				}
 			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž1
+			if (enemy2.life1 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit1(enemy2))
+				{
+					enemy2.damageFlag1 = true;
+					enemy2.damageCounter1 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life1 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life1 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life1 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž2
+			if (enemy2.life2 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit2(enemy2))
+				{
+					enemy2.damageFlag2 = true;
+					enemy2.damageCounter2 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life2 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life2 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life2 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž3
+			if (enemy2.life3 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit3(enemy2))
+				{
+					enemy2.damageFlag3 = true;
+					enemy2.damageCounter3 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life3 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life3 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life3 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž4
+			if (enemy2.life4 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit4(enemy2))
+				{
+					enemy2.damageFlag4 = true;
+					enemy2.damageCounter4 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life4 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life4 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life4 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž5
+			if (enemy2.life5 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit5(enemy2))
+				{
+					enemy2.damageFlag5 = true;
+					enemy2.damageCounter5 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life5 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life5 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life5 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž6
+			if (enemy2.life6 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit6(enemy2))
+				{
+					enemy2.damageFlag6 = true;
+					enemy2.damageCounter6 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life6 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life6 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life6 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G2‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž7
+			if (enemy2.life7 > 0)
+			{
+				// ŽG‹›“G2‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy2Hit7(enemy2))
+				{
+					enemy2.damageFlag7 = true;
+					enemy2.damageCounter7 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy2.life7 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy2.life7 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy2.life7 = 0;
+					}
+				}
+			}
 			// ŽG‹›“G3‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž
 			if (enemy3.life > 0)
 			{
@@ -446,6 +991,122 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					{
 						visibleFlag = false;
 						enemy3.life = 0;
+					}
+				}
+			}
+			// ŽG‹›“G3‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž1
+			if (enemy3.life1 > 0)
+			{
+				// ŽG‹›“G3‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy3Hit1(enemy3))
+				{
+					enemy3.damageFlag1 = true;
+					enemy3.damageCounter1 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy3.life1 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy3.life1 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy3.life1 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G3‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž2
+			if (enemy3.life2 > 0)
+			{
+				// ŽG‹›“G3‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy3Hit2(enemy3))
+				{
+					enemy3.damageFlag2 = true;
+					enemy3.damageCounter2 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy3.life2 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy3.life2 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy3.life2 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G3‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž3
+			if (enemy3.life3 > 0)
+			{
+				// ŽG‹›“G3‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy3Hit3(enemy3))
+				{
+					enemy3.damageFlag3 = true;
+					enemy3.damageCounter3 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy3.life3 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy3.life3 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy3.life3 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G3‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž4
+			if (enemy3.life4 > 0)
+			{
+				// ŽG‹›“G3‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy3Hit4(enemy3))
+				{
+					enemy3.damageFlag4 = true;
+					enemy3.damageCounter4 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy3.life4 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy3.life4 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy3.life4 = 0;
 					}
 				}
 			}
@@ -494,6 +1155,198 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					{
 						visibleFlag = false;
 						enemy4.life = 0;
+					}
+				}
+			}
+			// ŽG‹›“G4‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž1
+			if (enemy4.life1 > 0)
+			{
+				if ((enemy4.x1 - x) < 50 && (enemy4.x1 - x) > 0)
+				{
+					if (y - enemy4.y1 < 150 && enemy4.y1 - y < 150)
+					{
+						if (210 < enemy4.y1 && enemy4.y1 < 870)
+						{
+							if (enemy4.y1 <= y)
+							{
+								enemy4.y1 -= enemy4.speed + 20;
+								enemy4.circle.y1 = enemy4.y1;
+							}
+							if (enemy4.y1 > y)
+							{
+								enemy4.y1 += enemy4.speed + 20;
+								enemy4.circle.y1 = enemy4.y1;
+							}
+						}
+					}
+				}
+				// ŽG‹›“G4‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy4Hit1(enemy4))
+				{
+					enemy4.damageFlag1 = true;
+					enemy4.damageCounter1 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy4.life1 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy4.life1 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy4.life1 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G4‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž2
+			if (enemy4.life2 > 0)
+			{
+				if ((enemy4.x2 - x) < 50 && (enemy4.x2 - x) > 0)
+				{
+					if (y - enemy4.y2 < 150 && enemy4.y2 - y < 150)
+					{
+						if (210 < enemy4.y2 && enemy4.y2 < 870)
+						{
+							if (enemy4.y2 <= y)
+							{
+								enemy4.y2 -= enemy4.speed + 20;
+								enemy4.circle.y2 = enemy4.y2;
+							}
+							if (enemy4.y > y)
+							{
+								enemy4.y2 += enemy4.speed + 20;
+								enemy4.circle.y2 = enemy4.y2;
+							}
+						}
+					}
+				}
+				// ŽG‹›“G4‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy4Hit2(enemy4))
+				{
+					enemy4.damageFlag2 = true;
+					enemy4.damageCounter2 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy4.life2 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy4.life2 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy4.life2 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G4‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž3
+			if (enemy4.life3 > 0)
+			{
+				if ((enemy4.x3 - x) < 50 && (enemy4.x3 - x) > 0)
+				{
+					if (y - enemy4.y3 < 150 && enemy4.y3 - y < 150)
+					{
+						if (210 < enemy4.y3 && enemy4.y3 < 870)
+						{
+							if (enemy4.y3 <= y)
+							{
+								enemy4.y3 -= enemy4.speed + 20;
+								enemy4.circle.y3 = enemy4.y3;
+							}
+							if (enemy4.y3 > y)
+							{
+								enemy4.y3 += enemy4.speed + 20;
+								enemy4.circle.y3 = enemy4.y3;
+							}
+						}
+					}
+				}
+				// ŽG‹›“G4‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy4Hit3(enemy4))
+				{
+					enemy4.damageFlag3 = true;
+					enemy4.damageCounter3 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy4.life3 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy4.life3 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy4.life3 = 0;
+					}
+				}
+			}
+			// ŽG‹›“G4‚Ì‘Ì—Í‚ª0‚æ‚è‘½‚¢Žž4
+			if (enemy4.life4 > 0)
+			{
+				if ((enemy4.x4 - x) < 50 && (enemy4.x4 - x) > 0)
+				{
+					if (y - enemy4.y4 < 150 && enemy4.y4 - y < 150)
+					{
+						if (210 < enemy4.y4 && enemy4.y4 < 870)
+						{
+							if (enemy4.y4 <= y)
+							{
+								enemy4.y4 -= enemy4.speed + 20;
+								enemy4.circle.y4 = enemy4.y4;
+							}
+							if (enemy4.y4 > y)
+							{
+								enemy4.y4 += enemy4.speed + 20;
+								enemy4.circle.y4 = enemy4.y4;
+							}
+						}
+					}
+				}
+				// ŽG‹›“G4‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy4Hit4(enemy4))
+				{
+					enemy4.damageFlag4 = true;
+					enemy4.damageCounter4 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy4.life4 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy4.life4 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy4.life4 = 0;
 					}
 				}
 			}

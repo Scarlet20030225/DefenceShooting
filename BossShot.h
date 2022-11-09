@@ -34,4 +34,9 @@ public:
 	int graph;
 	int shotGraph;
 	int	shotCounter;
+	int followingCounter;
+	int num;
+	int index;
+	int rad;
+	bool scountFlag = false;
 };

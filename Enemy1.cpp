@@ -97,6 +97,19 @@ void Enemy1::Init5()
 	// その他(フラグ等)の初期化
 	damageFlag5 = false;
 }
+void Enemy1::Init6()
+{
+	life6 = ENEMY1_LIFE;
+	directionY6 = GetRand(1);
+	// 座標初期化
+	x6 = WINDOW_WIDTH + 100;
+	y6 = 930 - (h / static_cast<float>(2));
+	circle.x6 = x6;
+	circle.y6 = y6;
+	circle.r6 = w / static_cast<float>(2) - 3;
+	// その他(フラグ等)の初期化
+	damageFlag6 = false;
+}
 
 void Enemy1::Move()
 {
@@ -200,6 +213,23 @@ void Enemy1::Move5()
 	}
 }
 
+void Enemy1::Move6()
+{
+	// 移動処理
+	x6 -= speed / static_cast<float>(2);
+	circle.x6 -= speed / static_cast<float>(2);
+	if (directionY6 == 0)
+	{
+		y6 += speed;
+		circle.y6 += speed;
+	}
+	if (directionY6 == 1)
+	{
+		y6 -= speed;
+		circle.y6 -= speed;
+	}
+}
+
 void Enemy1::Hit()
 {
 	// 壁に当たった時の処理
@@ -245,7 +275,7 @@ void Enemy1::Hit()
 	}
 	if (y4 > 930 - (h / static_cast<float>(2)))
 	{
-		directionY = 1;
+		directionY4 = 1;
 	}
 	// 壁に当たった時の処理
 	if (y5 < 150 + (h / static_cast<float>(2)))
@@ -255,6 +285,15 @@ void Enemy1::Hit()
 	if (y5 > 930 - (h / static_cast<float>(2)))
 	{
 		directionY5 = 1;
+	}
+	// 壁に当たった時の処理
+	if (y6 < 150 + (h / static_cast<float>(2)))
+	{
+		directionY6 = 0;
+	}
+	if (y6 > 930 - (h / static_cast<float>(2)))
+	{
+		directionY6 = 1;
 	}
 }
 
@@ -338,6 +377,19 @@ void Enemy1::Damaged()
 			defetedEnemy1Num += 1;
 		}
 	}
+	// ダメージを受けた時の処理6
+	if (damageFlag6 == true)
+	{
+		damageCounter6++;
+		if (damageCounter6 == 1)
+		{
+			damageFlag6 = false;
+		}
+		if (life6 <= 0)
+		{
+			defetedEnemy1Num += 1;
+		}
+	}
 }
 
 void Enemy1::Draw()
@@ -414,6 +466,18 @@ void Enemy1::Draw()
 		else
 		{
 			DrawRotaGraph2(x5, y5, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
+			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
+		}
+	}
+	if (life6 > 0)
+	{
+		if (damageFlag6 == true)
+		{
+			DrawRotaGraph2(x6, y6, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, damageGraph, true, false);
+		}
+		else
+		{
+			DrawRotaGraph2(x6, y6, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
 			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
 		}
 	}

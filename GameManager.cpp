@@ -116,7 +116,6 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
 
             // •`‰æŠÖ”
             map.Draw();
-            behavioralPattern.Draw(enemy1, enemy2, enemy3, enemy4, boss);
             for (int i = 0; i < SHOT_NUM; i++)
             {
                 playerShot[i].Draw();
@@ -128,6 +127,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
             player.Draw(ui);
             ui.Draw();
             baseEdurance.Draw();
+            behavioralPattern.Draw(enemy1, enemy2, enemy3, enemy4, boss);
 
             // •`‰æ‚ÌŠm’è
             ScreenFlip();

@@ -56,10 +56,58 @@ void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enem
 		enduranceValue -= 1;
 		enemy1.defetedEnemy1Num += 1;
 	}
+	if (enemy1.x6 < 50 && enemy1.life6 > 0)
+	{
+		enemy1.life6 = 0;
+		enduranceValue -= 1;
+		enemy1.defetedEnemy1Num += 1;
+	}
 	if (enemy2.x < 50 && enemy2.life > 0)
 	{
 		enduranceValue -= 1;
 		enemy2.life = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x1 < 50 && enemy2.life1 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life1 = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x2 < 50 && enemy2.life2 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life2 = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x3 < 50 && enemy2.life3 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life3 = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x4 < 50 && enemy2.life4 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life4 = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x5 < 50 && enemy2.life5 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life5 = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x6 < 50 && enemy2.life6 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life6 = 0;
+		enemy2.defetedEnemy2Num += 1;
+	}
+	if (enemy2.x7 < 50 && enemy2.life7 > 0)
+	{
+		enduranceValue -= 1;
+		enemy2.life7 = 0;
 		enemy2.defetedEnemy2Num += 1;
 	}
 	if (enemy3.x < 50 && enemy3.life > 0)
@@ -68,9 +116,57 @@ void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enem
 		enduranceValue -= 1;
 		enemy3.defetedEnemy3Num += 1;
 	}
+	if (enemy3.x1 < 50 && enemy3.life1 > 0)
+	{
+		enemy3.life1 = 0;
+		enduranceValue -= 1;
+		enemy3.defetedEnemy3Num += 1;
+	}
+	if (enemy3.x2 < 50 && enemy3.life2 > 0)
+	{
+		enemy3.life2 = 0;
+		enduranceValue -= 1;
+		enemy3.defetedEnemy3Num += 1;
+	}
+	if (enemy3.x3 < 50 && enemy3.life3 > 0)
+	{
+		enemy3.life3 = 0;
+		enduranceValue -= 1;
+		enemy3.defetedEnemy3Num += 1;
+	}
+	if (enemy3.x4 < 50 && enemy3.life4 > 0)
+	{
+		enemy3.life4 = 0;
+		enduranceValue -= 1;
+		enemy3.defetedEnemy3Num += 1;
+	}
 	if (enemy4.x < 50 && enemy4.life > 0)
 	{
 		enemy4.life = 0;
+		enduranceValue -= 1;
+		enemy4.defetedEnemy4Num += 1;
+	}
+	if (enemy4.x1 < 50 && enemy4.life1 > 0)
+	{
+		enemy4.life1 = 0;
+		enduranceValue -= 1;
+		enemy4.defetedEnemy4Num += 1;
+	}
+	if (enemy4.x2 < 50 && enemy4.life2 > 0)
+	{
+		enemy4.life2 = 0;
+		enduranceValue -= 1;
+		enemy4.defetedEnemy4Num += 1;
+	}
+	if (enemy4.x3 < 50 && enemy4.life3 > 0)
+	{
+		enemy4.life3 = 0;
+		enduranceValue -= 1;
+		enemy4.defetedEnemy4Num += 1;
+	}
+	if (enemy4.x4 < 50 && enemy4.life4 > 0)
+	{
+		enemy4.life4 = 0;
 		enduranceValue -= 1;
 		enemy4.defetedEnemy4Num += 1;
 	}

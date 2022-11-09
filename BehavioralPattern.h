@@ -10,4 +10,9 @@ public:
 	void Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss);
 
 	int defetedEnemyNum;
+
+	int warningGraph;
+	int warningX;
+	int warningY;
+	int warningCounter;
 };
