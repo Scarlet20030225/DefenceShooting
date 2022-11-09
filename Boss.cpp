@@ -81,7 +81,7 @@ void Boss::Damaged()
 		if (damageFlag == true)
 		{
 			damageCounter++;
-			if (damageCounter == 1)
+			if (damageCounter == 3)
 			{
 				damageFlag = false;
 			}

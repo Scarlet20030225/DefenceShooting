@@ -19,7 +19,7 @@ void Enemy1::Init()
 	GetGraphSize(graph, &w, &h);
 	// 座標初期化
 	x        = WINDOW_WIDTH + 100;
-	y        = GetRand(700) + 150 + (h / static_cast<float>(2));
+	y        = 540;
 	circle.x = x;
 	circle.y = y;
 	circle.r = w / static_cast<float>(2) - 3;
@@ -34,7 +34,7 @@ void Enemy1::Init1()
 	directionY1 = GetRand(1);
 	// 座標初期化
 	x1 = WINDOW_WIDTH + 100;
-	y1 = GetRand(700) + 150 + (h / static_cast<float>(2));
+	y1 = 930 - (h / static_cast<float>(2));
 	circle.x1 = x1;
 	circle.y1 = y1;
 	circle.r1 = w / static_cast<float>(2) - 3;
@@ -48,7 +48,7 @@ void Enemy1::Init2()
 	directionY2 = GetRand(1);
 	// 座標初期化
 	x2 = WINDOW_WIDTH + 100;
-	y2 = GetRand(700) + 150 + (h / static_cast<float>(2));
+	y2 = 150 + (h / static_cast<float>(2));
 	circle.x2 = x2;
 	circle.y2 = y2;
 	circle.r2 = w / static_cast<float>(2) - 3;
@@ -62,7 +62,7 @@ void Enemy1::Init3()
 	directionY3 = GetRand(1);
 	// 座標初期化
 	x3 = WINDOW_WIDTH + 100;
-	y3 = GetRand(700) + 150 + (h / static_cast<float>(2));
+	y3 = 540;
 	circle.x3 = x3;
 	circle.y3 = y3;
 	circle.r3 = w / static_cast<float>(2) - 3;

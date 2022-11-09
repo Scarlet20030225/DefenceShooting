@@ -26,6 +26,7 @@ void BehavioralPattern::Init(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
 
 void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
 {
+    defetedEnemyNum = enemy1.defetedEnemy1Num + enemy2.defetedEnemy2Num + enemy3.defetedEnemy3Num + enemy4.defetedEnemy4Num;
     // éGãõìG1
     if (defetedEnemyNum >= 2)
     {
@@ -54,10 +55,12 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
     enemy4.Move();
     enemy4.Hit();
     enemy4.Damaged();
-    defetedEnemyNum = enemy1.defetedEnemy1Num + enemy2.defetedEnemy2Num + enemy3.defetedEnemy3Num + enemy4.defetedEnemy4Num;
 
     // É{ÉX
-    boss.Move();
+    if (defetedEnemyNum >= 7)
+    {
+        boss.Move();
+    }
     boss.Hit();
     boss.Damaged();
 
@@ -65,15 +68,17 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
 
 void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4& enemy4, Boss& boss)
 {
+    boss.Draw();
     enemy1.Draw();
     enemy2.Draw();
     enemy3.Draw();
     enemy4.Draw();
    
-    boss.Draw();
-
-    DrawBox(585, 100, 585 + (defetedEnemyNum * 15), 110, GetColor(255, 255, 0), true);
-    DrawBox(585, 100, 585 + (boss.life * 5), 110, GetColor(255, 0, 0), true);
+    DrawBox(585, 100, 585 + (defetedEnemyNum * 30), 110, GetColor(255, 255, 0), true);
+    if (defetedEnemyNum >= 7)
+    {
+        DrawBox(585, 100, 585 + (boss.life * 5), 110, GetColor(255, 0, 0), true);
+    }
     int color;
     color = GetColor(255, 255, 255);
     DrawFormatString(0, 0, color, "åÇîjêîÅF%d", defetedEnemyNum);

@@ -310,9 +310,9 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			if (enemy1.life3 > 0)
 			{
 				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
-				if (CheckEnemy1Hit(enemy1))
+				if (CheckEnemy1Hit3(enemy1))
 				{
-					enemy1.damageFlag = true;
+					enemy1.damageFlag3 = true;
 					enemy1.damageCounter3 = 0;
 
 					// ’e‚ªRapidBullet‚ÌŽž
@@ -399,17 +399,19 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 				if ((enemy4.x - x) < 50 && (enemy4.x - x) > 0)
 				{
 					if (y - enemy4.y < 150 && enemy4.y - y < 150)
-					if (210 < enemy4.y && enemy4.y < 870)
 					{
-						if (enemy4.y < y)
+						if (210 < enemy4.y && enemy4.y < 870)
 						{
-							enemy4.y -= enemy4.speed + 20;
-							enemy4.circle.y = enemy4.y;
-						}
-						if (enemy4.y > y)
-						{
-							enemy4.y += enemy4.speed + 20;
-							enemy4.circle.y = enemy4.y;
+							if (enemy4.y <= y)
+							{
+								enemy4.y -= enemy4.speed + 20;
+								enemy4.circle.y = enemy4.y;
+							}
+							if (enemy4.y > y)
+							{
+								enemy4.y += enemy4.speed + 20;
+								enemy4.circle.y = enemy4.y;
+							}
 						}
 					}
 				}
