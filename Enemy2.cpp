@@ -26,10 +26,18 @@ void Enemy2::Init()
 	defetedEnemy2Num = 0;
 }
 
+void Enemy2::Init1()
+{
+}
+
 void Enemy2::Move()
 {
 	x -= speed;
 	circle.x -= speed;
+}
+
+void Enemy2::Move1()
+{
 }
 
 void Enemy2::Hit()

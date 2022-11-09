@@ -70,6 +70,34 @@ void Enemy1::Init3()
 	damageFlag3 = false;
 }
 
+void Enemy1::Init4()
+{
+	life4 = ENEMY1_LIFE;
+	directionY4 = 0;
+	// 座標初期化
+	x4 = WINDOW_WIDTH + 100;
+	y4 = 540;
+	circle.x4 = x4;
+	circle.y4 = y4;
+	circle.r4 = w / static_cast<float>(2) - 3;
+	// その他(フラグ等)の初期化
+	damageFlag4 = false;
+}
+
+void Enemy1::Init5()
+{
+	life5 = ENEMY1_LIFE;
+	directionY5 = 1;
+	// 座標初期化
+	x5 = WINDOW_WIDTH + 100;
+	y5 = 540;
+	circle.x5 = x5;
+	circle.y5 = y5;
+	circle.r5 = w / static_cast<float>(2) - 3;
+	// その他(フラグ等)の初期化
+	damageFlag5 = false;
+}
+
 void Enemy1::Move()
 {
 	// 移動処理
@@ -138,6 +166,40 @@ void Enemy1::Move3()
 	}
 }
 
+void Enemy1::Move4()
+{
+	// 移動処理
+	x4 -= speed / static_cast<float>(2);
+	circle.x4 -= speed / static_cast<float>(2);
+	if (directionY4 == 0)
+	{
+		y4 += speed;
+		circle.y4 += speed;
+	}
+	if (directionY4 == 1)
+	{
+		y4 -= speed;
+		circle.y4 -= speed;
+	}
+}
+
+void Enemy1::Move5()
+{
+	// 移動処理
+	x5 -= speed / static_cast<float>(2);
+	circle.x5 -= speed / static_cast<float>(2);
+	if (directionY5 == 0)
+	{
+		y5 += speed;
+		circle.y5 += speed;
+	}
+	if (directionY5 == 1)
+	{
+		y5 -= speed;
+		circle.y5 -= speed;
+	}
+}
+
 void Enemy1::Hit()
 {
 	// 壁に当たった時の処理
@@ -175,6 +237,24 @@ void Enemy1::Hit()
 	if (y3 > 930 - (h / static_cast<float>(2)))
 	{
 		directionY3 = 1;
+	}
+	// 壁に当たった時の処理4
+	if (y4 < 150 + (h / static_cast<float>(2)))
+	{
+		directionY4 = 0;
+	}
+	if (y4 > 930 - (h / static_cast<float>(2)))
+	{
+		directionY = 1;
+	}
+	// 壁に当たった時の処理
+	if (y5 < 150 + (h / static_cast<float>(2)))
+	{
+		directionY5 = 0;
+	}
+	if (y5 > 930 - (h / static_cast<float>(2)))
+	{
+		directionY5 = 1;
 	}
 }
 
@@ -232,6 +312,32 @@ void Enemy1::Damaged()
 			defetedEnemy1Num += 1;
 		}
 	}
+	// ダメージを受けた時の処理4
+	if (damageFlag4 == true)
+	{
+		damageCounter4++;
+		if (damageCounter4 == 1)
+		{
+			damageFlag4 = false;
+		}
+		if (life4 <= 0)
+		{
+			defetedEnemy1Num += 1;
+		}
+	}
+	// ダメージを受けた時の処理
+	if (damageFlag5 == true)
+	{
+		damageCounter5++;
+		if (damageCounter5 == 1)
+		{
+			damageFlag5 = false;
+		}
+		if (life5 <= 0)
+		{
+			defetedEnemy1Num += 1;
+		}
+	}
 }
 
 void Enemy1::Draw()
@@ -284,6 +390,30 @@ void Enemy1::Draw()
 		else
 		{
 			DrawRotaGraph2(x3, y3, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
+			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
+		}
+	}
+	if (life4 > 0)
+	{
+		if (damageFlag4 == true)
+		{
+			DrawRotaGraph2(x4, y4, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, damageGraph, true, false);
+		}
+		else
+		{
+			DrawRotaGraph2(x4, y4, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
+			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
+		}
+	}
+	if (life5 > 0)
+	{
+		if (damageFlag5 == true)
+		{
+			DrawRotaGraph2(x5, y5, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, damageGraph, true, false);
+		}
+		else
+		{
+			DrawRotaGraph2(x5, y5, w / static_cast<float>(2), h / static_cast<float>(2), 1.0f, angle, graph, true, false);
 			//DrawCircle(circle.x, circle.y, circle.r, GetColor(0, 255, 0));
 		}
 	}

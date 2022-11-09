@@ -135,6 +135,40 @@ bool Shot::PlayerEnemy1Hit3(Player& player, Enemy1& enemy1)
 	return false;
 }
 
+bool Shot::PlayerEnemy1Hit4(Player& player, Enemy1& enemy1)
+{
+	dx = player.circle.x - enemy1.circle.x;
+	dy = player.circle.y - enemy1.circle.y;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy1.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy1Hit5(Player& player, Enemy1& enemy1)
+{
+	dx = player.circle.x - enemy1.circle.x;
+	dy = player.circle.y - enemy1.circle.y;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy1.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
 bool Shot::PlayerEnemy2Hit(Player& player, Enemy2& enemy2)
 {
 	dx = player.circle.x - enemy2.circle.x;
@@ -223,6 +257,24 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			{
 				player.life -= 1;
 				enemy1.life3 = 0;
+				enemy1.defetedEnemy1Num += 1;
+			}
+		}
+		if (enemy1.life4 > 0)
+		{
+			if (PlayerEnemy1Hit4(player, enemy1))
+			{
+				player.life -= 1;
+				enemy1.life4 = 0;
+				enemy1.defetedEnemy1Num += 1;
+			}
+		}
+		if (enemy1.life5 > 0)
+		{
+			if (PlayerEnemy1Hit5(player, enemy1))
+			{
+				player.life -= 1;
+				enemy1.life5 = 0;
 				enemy1.defetedEnemy1Num += 1;
 			}
 		}

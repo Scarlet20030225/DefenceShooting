@@ -16,6 +16,8 @@ void BehavioralPattern::Init(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy1.Init1();
     enemy1.Init2();
     enemy1.Init3();
+    enemy1.Init4();
+    enemy1.Init5();
     enemy2.Init();
     enemy3.Init();
     enemy4.Init();
@@ -41,6 +43,11 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
     {
         enemy1.Move3();
     }
+    if (defetedEnemyNum >= 7)
+    {
+        enemy1.Move4();
+        enemy1.Move5();
+    }
     enemy1.Hit();
     enemy1.Damaged();
     // ŽG‹›“G2
@@ -57,7 +64,7 @@ void BehavioralPattern::Update(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, E
     enemy4.Damaged();
 
     // ƒ{ƒX
-    if (defetedEnemyNum >= 7)
+    if (defetedEnemyNum >= 25)
     {
         boss.Move();
     }
@@ -75,7 +82,7 @@ void BehavioralPattern::Draw(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Ene
     enemy4.Draw();
    
     DrawBox(585, 100, 585 + (defetedEnemyNum * 30), 110, GetColor(255, 255, 0), true);
-    if (defetedEnemyNum >= 7)
+    if (defetedEnemyNum >= 25)
     {
         DrawBox(585, 100, 585 + (boss.life * 5), 110, GetColor(255, 0, 0), true);
     }
