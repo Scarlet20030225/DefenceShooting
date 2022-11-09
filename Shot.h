@@ -15,6 +15,9 @@ public:
 	void BossBurst(Boss& boss, BossShot* bossShot);
 
 	bool PlayerEnemy1Hit(Player& player, Enemy1& enemy1);
+	bool PlayerEnemy1Hit1(Player& player, Enemy1& enemy1);
+	bool PlayerEnemy1Hit2(Player& player, Enemy1& enemy1);
+	bool PlayerEnemy1Hit3(Player& player, Enemy1& enemy1);
 	bool PlayerEnemy2Hit(Player& player, Enemy2& enemy2);
 	bool PlayerEnemy3Hit(Player& player, Enemy3& enemy3);
 	bool PlayerEnemy4Hit(Player& player, Enemy4& enemy4);

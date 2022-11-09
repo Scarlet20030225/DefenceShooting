@@ -25,6 +25,9 @@ public:
 	/// Ž©‹@‚Ì’e‚ÆŽG‹›“G1‚Ì‰~Œ`“–‚½‚è”»’è
 	/// </summary>
 	bool CheckEnemy1Hit(Enemy1& enemy1);
+	bool CheckEnemy1Hit1(Enemy1& enemy1);
+	bool CheckEnemy1Hit2(Enemy1& enemy1);
+	bool CheckEnemy1Hit3(Enemy1& enemy1);
 	/// <summary>
 	/// Ž©‹@‚Ì’e‚ÆŽG‹›“G2‚Ì‰~Œ`“–‚½‚è”»’è
 	/// </summary>

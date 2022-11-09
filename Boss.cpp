@@ -75,13 +75,16 @@ void Boss::Hit()
 
 void Boss::Damaged()
 {
-	// ダメージを受けた時の処理
-	if (damageFlag == true)
+	if (moveCounter >= 30)
 	{
-		damageCounter++;
-		if (damageCounter == 1)
+		// ダメージを受けた時の処理
+		if (damageFlag == true)
 		{
-			damageFlag = false;
+			damageCounter++;
+			if (damageCounter == 1)
+			{
+				damageFlag = false;
+			}
 		}
 	}
 }

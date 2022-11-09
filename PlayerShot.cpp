@@ -54,6 +54,57 @@ bool PlayerShot::CheckEnemy1Hit(Enemy1& enemy1)
 	return false;
 }
 
+bool PlayerShot::CheckEnemy1Hit1(Enemy1& enemy1)
+{
+	dx = circle.x - enemy1.circle.x1;
+	dy = circle.y - enemy1.circle.y1;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy1.circle.r1;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool PlayerShot::CheckEnemy1Hit2(Enemy1& enemy1)
+{
+	dx = circle.x - enemy1.circle.x2;
+	dy = circle.y - enemy1.circle.y2;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy1.circle.r2;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool PlayerShot::CheckEnemy1Hit3(Enemy1& enemy1)
+{
+	dx = circle.x - enemy1.circle.x3;
+	dy = circle.y - enemy1.circle.y3;
+	dr = dx * dx + dy * dy;
+
+	ar = circle.r + enemy1.circle.r3;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
 // ŽG‹›“G2‚ÆƒvƒŒƒCƒ„[’e‚Ì“–‚½‚è”»’è
 bool PlayerShot::CheckEnemy2Hit(Enemy2& enemy2)
 {
@@ -145,26 +196,29 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			// ƒ{ƒX‚É’e‚ª“–‚½‚Á‚½Žž
 			if(CheckBossHit(boss))
 			{
-				boss.damageFlag    = true;
-				boss.damageCounter = 0;
+				if (boss.moveCounter >= 30)
+				{
+					boss.damageFlag = true;
+					boss.damageCounter = 0;
 
-				// ’e‚ªRapidBullet‚ÌŽž
-				if (graph == rapidBullet)
-				{
-					visibleFlag = false;
-					boss.life  -= 1;
-				}
-				// ’e‚ªPenetrateBullet‚ÌŽž
-				if (graph == penetrateBullet)
-				{
-					visibleFlag = true;
-					boss.life  -= 1;
-				}
-				// ’e‚ªMissileBullet‚ÌŽž
-				if (graph == missileBullet)
-				{
-					visibleFlag = false;
-					boss.life  -= 10;
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						boss.life -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						boss.life -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						boss.life -= 10;
+					}
 				}
 			}
 
@@ -194,6 +248,90 @@ void PlayerShot::Update(Boss& boss, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 					{
 						visibleFlag = false;
 						enemy1.life = 0;
+					}
+				}
+			}
+			if (enemy1.life1 > 0)
+			{
+				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy1Hit1(enemy1))
+				{
+					enemy1.damageFlag1 = true;
+					enemy1.damageCounter1 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy1.life1 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy1.life1 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy1.life1 = 0;
+					}
+				}
+			}
+			if (enemy1.life2 > 0)
+			{
+				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy1Hit2(enemy1))
+				{
+					enemy1.damageFlag2 = true;
+					enemy1.damageCounter2 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy1.life2 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy1.life2 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy1.life2 = 0;
+					}
+				}
+			}
+			if (enemy1.life3 > 0)
+			{
+				// ŽG‹›“G1‚É’e‚ª“–‚½‚Á‚½Žž
+				if (CheckEnemy1Hit(enemy1))
+				{
+					enemy1.damageFlag = true;
+					enemy1.damageCounter3 = 0;
+
+					// ’e‚ªRapidBullet‚ÌŽž
+					if (graph == rapidBullet)
+					{
+						visibleFlag = false;
+						enemy1.life3 -= 1;
+					}
+					// ’e‚ªPenetrateBullet‚ÌŽž
+					if (graph == penetrateBullet)
+					{
+						visibleFlag = true;
+						enemy1.life3 -= 1;
+					}
+					// ’e‚ªMissileBullet‚ÌŽž
+					if (graph == missileBullet)
+					{
+						visibleFlag = false;
+						enemy1.life3 = 0;
 					}
 				}
 			}

@@ -26,6 +26,24 @@ void BaseEdurance::Edurance(Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enem
 		enduranceValue -= 1;
 		enemy1.defetedEnemy1Num += 1;
 	}
+	if (enemy1.x1 < 50 && enemy1.life1 > 0)
+	{
+		enemy1.life1 = 0;
+		enduranceValue -= 1;
+		enemy1.defetedEnemy1Num += 1;
+	}
+	if (enemy1.x2 < 50 && enemy1.life2 > 0)
+	{
+		enemy1.life2 = 0;
+		enduranceValue -= 1;
+		enemy1.defetedEnemy1Num += 1;
+	}
+	if (enemy1.x3 < 50 && enemy1.life3 > 0)
+	{
+		enemy1.life3 = 0;
+		enduranceValue -= 1;
+		enemy1.defetedEnemy1Num += 1;
+	}
 	if (enemy2.x < 50 && enemy2.life > 0)
 	{
 		enduranceValue -= 1;

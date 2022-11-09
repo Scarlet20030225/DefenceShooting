@@ -55,10 +55,10 @@ void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 		{
 			for (int i = 0; i < SHOT_NUM; i++)
 			{
+				bossShot[i].visibleFlag = true;
 				bossShot[i].x = boss.x + bossShot[i].w;
 				bossShot[i].y = (boss.h + bossShot[i].h) / static_cast<float>(2) + boss.y;
 
-				bossShot[i].visibleFlag = true;
 				break;
 			}
 			bossShot->shotCounter = 30;
@@ -74,6 +74,57 @@ bool Shot::PlayerEnemy1Hit(Player& player, Enemy1& enemy1)
 	dr = dx * dx + dy * dy;
 
 	ar = player.circle.r + enemy1.circle.r;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy1Hit1(Player& player, Enemy1& enemy1)
+{
+	dx = player.circle.x - enemy1.circle.x1;
+	dy = player.circle.y - enemy1.circle.y1;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy1.circle.r1;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy1Hit2(Player& player, Enemy1& enemy1)
+{
+	dx = player.circle.x - enemy1.circle.x2;
+	dy = player.circle.y - enemy1.circle.y2;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy1.circle.r2;
+	dl = ar * ar;
+
+	if (dr < dl)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Shot::PlayerEnemy1Hit3(Player& player, Enemy1& enemy1)
+{
+	dx = player.circle.x - enemy1.circle.x3;
+	dy = player.circle.y - enemy1.circle.y3;
+	dr = dx * dx + dy * dy;
+
+	ar = player.circle.r + enemy1.circle.r3;
 	dl = ar * ar;
 
 	if (dr < dl)
@@ -145,6 +196,33 @@ void Shot::CheckHit(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enem
 			{
 				player.life -= 1;
 				enemy1.life = 0;
+				enemy1.defetedEnemy1Num += 1;
+			}
+		}
+		if (enemy1.life1 > 0)
+		{
+			if (PlayerEnemy1Hit1(player, enemy1))
+			{
+				player.life -= 1;
+				enemy1.life1 = 0;
+				enemy1.defetedEnemy1Num += 1;
+			}
+		}
+		if (enemy1.life2 > 0)
+		{
+			if (PlayerEnemy1Hit2(player, enemy1))
+			{
+				player.life -= 1;
+				enemy1.life2 = 0;
+				enemy1.defetedEnemy1Num += 1;
+			}
+		}
+		if (enemy1.life3 > 0)
+		{
+			if (PlayerEnemy1Hit3(player, enemy1))
+			{
+				player.life -= 1;
+				enemy1.life3 = 0;
 				enemy1.defetedEnemy1Num += 1;
 			}
 		}

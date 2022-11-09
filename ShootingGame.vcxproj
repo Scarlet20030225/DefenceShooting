@@ -171,7 +171,6 @@
     <ClInclude Include="Shot.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="UI.h" />
-    <ClInclude Include="Wave.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
