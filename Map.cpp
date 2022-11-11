@@ -4,7 +4,7 @@
 
 void Map::Load()
 {
-	backGraph             = LoadGraph("img/MapBack.png");
+	backGraph             = LoadGraph("img/Title.png");
 	intermediateStarGraph = LoadGraph("img/Star1.png");
 	farStarGraph          = LoadGraph("img/Star2.png");
 	cautionGraph          = LoadGraph("img/Caution.png");
@@ -21,7 +21,7 @@ void Map::Init()
 	// ¯(‹ß‹——£)+”wŒiF‰Šú‰»
 	back1X = 0;
 	back2X = WINDOW_WIDTH;
-	backY  = 150;
+	backY  = 0;
 	// ¯(’†‹——£)‰Šú‰»
 	intermediateStar1X = 0;
 	intermediateStar2X = WINDOW_WIDTH;

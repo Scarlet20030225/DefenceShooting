@@ -55,7 +55,6 @@ void Shot::BossBurst(Boss& boss, BossShot* bossShot)
 		{
 			for (int i = 0; i < SHOT_NUM; i++)
 			{
-				bossShot[i].visibleFlag = true;
 				bossShot[i].x = boss.x + bossShot[i].w;
 				bossShot[i].y = (boss.h + bossShot[i].h) / static_cast<float>(2) + boss.y;
 

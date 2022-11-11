@@ -20,17 +20,13 @@ void BossShot::Init()
 
 void BossShot::Update(Player& player)
 {
-	if (shotCounter == 0)
-	{
-		rad = atan2(player.y - y, player.x - x);
-	}
 	if (visibleFlag == true)
 	{
 		// ’ei‚ğˆÚ“®‚³‚¹‚é
-		x -= 30 * cos(rad);
+		x -= 30;
 
 		// ‰æ–ÊŠO‚Éo‚Ä‚µ‚Ü‚Á‚½ê‡‚Í’e‚Ì‘¶İ‚ğÁ‚·
-		if (x < 50)
+		if (x < 45)
 		{
 			visibleFlag = false;
 		}

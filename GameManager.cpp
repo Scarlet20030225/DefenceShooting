@@ -103,6 +103,7 @@ void Loop(Player& player, Enemy1& enemy1, Enemy2& enemy2, Enemy3& enemy3, Enemy4
                 playerShot[i].Update(boss, enemy1, enemy2, enemy3, enemy4);
                 if (boss.x == 1200)
                 {
+                    bossShot[i].visibleFlag = true;
                     bossShot[i].Update(player);
                 }
             }
